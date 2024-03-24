@@ -3,7 +3,7 @@ import './utilities/utilities.css'
 import WindowCreate, { vsCodeCnt, fileExplorerCnt, chromeCnt } from './components/windowsNstuff'
 
 
-let newWindow = new WindowCreate(
+let fileWindow = new WindowCreate(
     document.querySelector('#app'),
     fileExplorerCnt,
     // false,
@@ -24,9 +24,11 @@ let chromeWindow = new WindowCreate(
     1101/706
 )
 
-setTimeout(() => {
+fileWindow.eventToBtn(function(e) {
     vsWindow.open()
     setTimeout(() => {
         chromeWindow.open()
     }, 1500)
-}, 2000)
+})
+
+    
