@@ -10,6 +10,7 @@
   gap: 3rem;
   color: whitesmoke;
   position: relative;
+  overflow: hidden;
 }
 
 .window {
@@ -18,8 +19,8 @@
   overflow: hidden;
   background-color: #191919;
   border-radius: 3px;
-  box-shadow: 40px 0 190px rgba(180, 2, 245, 0.498),
-    -180px 60px 180px rgba(0, 21, 255, 0.444);
+  box-shadow: 40px 0 80px rgba(180, 2, 245, 0.246),
+    -50px 60px 80px rgba(0, 21, 255, 0.198);
   font-family: "Segoe UI";
 }
 .window,
@@ -34,17 +35,19 @@
   /* background-color: red; */
   border: 1px solid transparent;
 }
+.hover-file-item,
 #fileItem:hover {
   border: 1px solid rgba(255, 255, 255, 0.308);
   background-color: rgba(221, 221, 221, 0.279);
   cursor: pointer;
 }
-
 /* // fileEx, vsCode, chrome */
 
 .fileEx {
   top: 20%;
   left: 15%;
+  box-shadow: 20px 0 70px rgba(238, 166, 12, 0.278),
+    -40px 60px 70px rgba(246, 255, 0, 0.126);
 }
 .vsCode {
   right: 18%;
@@ -53,5 +56,25 @@
 .chrome {
   left: 50%;
   top: 50%;
+  box-shadow: 0px 0 200px rgba(254, 254, 254, 0.597);
   transform: translateX(-50%) translateY(-50%);
+}
+.cursor {
+  position: absolute;
+  z-index: 99999;
+  width: 13px;
+  aspect-ratio: calc(165 / 260);
+  background-image: url("./assets/cursor.png");
+  background-size: cover;
+
+  transition: 1s ease-in-out;
+}
+
+@keyframes Popup {
+  0% {
+    scale: 0.3;
+  }
+  100% {
+    scale: 1;
+  }
 }

@@ -10,7 +10,7 @@ import vsTask from '../assets/vstask.png'
 import vsLive from '../assets/vsLive.png'
 
 import chromeSrc from '../assets/chromeop.png'
-import { resolveEnvPrefix } from 'vite'
+import { ssrImportMetaKey } from 'vite/runtime'
 
 export default class WindowCreate {
     constructor(root, fn, visibility, aspectRat = 0) {
@@ -22,6 +22,7 @@ export default class WindowCreate {
     }
     close() {
         this.windowMain.style.display = 'none'
+        this.windowMain.style.scale = '0.3'
         this.visibility = false;
     }
     open() {
@@ -37,11 +38,10 @@ export default class WindowCreate {
             this.windowMain.style.aspectRatio = `${this.aspectRat}`
         }
 
-        this.returnVal = fn(this.windowMain)
+        let something = fn(this.windowMain)
     }
     eventToBtn(fn) {
-        console.log(this.returnVal)
-        this.returnVal.addEventListener('click', e => fn(e), false);
+        document.querySelector('#fileItem').addEventListener('click', e => fn(e), false);
     }
 }
 
@@ -64,17 +64,17 @@ const getHAndW = async function (url) {
 export async function fileExplorerCnt(element) {
     element.classList.add('fileEx')
     element.innerHTML = `
-        <div style="background-image: url(&quot;/assets/filenavbar.png&quot;); width: 100%; aspect-ratio: 5.35577 / 1;"></div>
-        <div class="flex">
-          <div style="background-image: url(&quot;/assets/filetask.png&quot;); width: 25%; aspect-ratio: 0.503891 / 1;"></div>
-          <div style="width: 70%; height: 219px;">
-            <div id="fileItem">📁 portfolio-webite</div>
-            <div id="fileItem">📁 starter project</div>
-            <div id="fileItem">📁 STAI aqua</div>
-            <div id="fileItem">📁 KFC website</div>
-            <div id="fileItem">📁 Backend project</div>
-          </div>
-        </div>
+    <div style="background-image: url(&quot;/assets/filenavbar.png&quot;); width: 100%; aspect-ratio: 5.35577 / 1;"></div>
+    <div class="flex">
+    <div style="background-image: url(&quot;/assets/filetask.png&quot;); width: 25%; aspect-ratio: 0.503891 / 1;"></div>
+    <div style="width: 70%; height: 219px;">
+    <div id="fileItem">📁 portfolio-webite</div>
+    <div id="fileItem">📁 starter project</div>
+    <div id="fileItem">📁 STAI aqua</div>
+    <div id="fileItem">📁 KFC website</div>
+    <div id="fileItem">📁 Backend project</div>
+    </div>
+    </div>
     `;
     return document.querySelector('#fileItem')
 }
