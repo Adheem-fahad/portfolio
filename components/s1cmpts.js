@@ -1,16 +1,5 @@
 import { el, css, prependChild } from '../utilities/utilities'
-import fileNav from '../assets/filenavbar.png'
-import filetask from '../assets/filetask.png'
-
-// vs code importings
-import vsFile from '../assets/vsfilesnav.png'
-import vsNav from '../assets/vsnav.png'
-import vsSetting from '../assets/vssettings.png'
-import vsTask from '../assets/vstask.png'
-import vsLive from '../assets/vsLive.png'
-
 import chromeSrc from '../assets/chromeop.png'
-import { ssrImportMetaKey } from 'vite/runtime'
 
 export default class WindowCreate {
     constructor(root, fn, visibility, aspectRat = 0) {
@@ -80,6 +69,7 @@ export async function fileExplorerCnt(element) {
 }
 
 export async function vsCodeCnt(element) {
+    console.log('vs code')
     element.classList.add('vsCode')
     element.innerHTML = `
     <div style="background-image: url(&quot;/assets/vsnav.png&quot;); width: 100%; aspect-ratio: 18.8793 / 1;"></div>
@@ -92,12 +82,17 @@ export async function vsCodeCnt(element) {
     </div>
     <div class="flex" style="justify-content: space-between;">
     <div style="background-image: url(&quot;/assets/vssettings.png&quot;); width: 80%; aspect-ratio: 27.1471 / 1;"></div>
-    <div style="background-image: url(&quot;/assets/vsLive.png&quot;); width: 10%; aspect-ratio: 3.62931 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/vsLive.png&quot;); width: 10%; aspect-ratio: 3.62931 / 1;" id="live-server"></div>
     </div>
     `
 }
 
 export async function chromeCnt(element) {
+    console.log('chrome')
     element.classList.add('chrome')
     element.style.backgroundImage = `url(${chromeSrc})`
+    css(element, {
+        top: `${(element.parentElement.clientHeight - element.clientHeight)/2}px`,
+        left: `${(element.parentElement.clientWidth - element.clientWidth)/2}px`
+    })
 }
