@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -11,16 +12,24 @@
   color: whitesmoke;
   position: relative;
   overflow: hidden;
-
-  scale: 0.3;
+  font-family: "poppins";
+  perspective: 500px;
+  transform-style: preserve-3d;
 }
-
+#app h1 {
+  font-size: 0;
+  background: -webkit-radial-gradient(#710dc4, #9eb3f2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(10px);
+  transition: 3s ease-in-out;
+}
 .window {
   position: absolute;
   width: 30rem;
   overflow: hidden;
   background-color: #191919;
-  border-radius: 3px;
+  border-radius: 7px;
   box-shadow: 40px 0 80px rgba(180, 2, 245, 0.246),
     -50px 60px 80px rgba(0, 21, 255, 0.198);
   font-family: "Segoe UI";
@@ -50,13 +59,30 @@
   left: 15%;
   box-shadow: 20px 0 70px rgba(238, 166, 12, 0.278),
     -40px 60px 70px rgba(246, 255, 0, 0.126);
+  transition: 2s ease-in-out;
+}
+.fileEXanim {
+  transform: rotateY(40deg) translateX(-700px);
+  filter: blur(0.5px);
+  box-shadow: none;
 }
 .vsCode {
   right: 18%;
   bottom: 20%;
+  transition: 2s ease-out;
+}
+.vsCodeanim {
+  transform: rotateY(-40deg) translateX(700px);
+  filter: blur(0.5px);
+  box-shadow: none;
 }
 .chrome {
   box-shadow: 0px 0 200px rgba(254, 254, 254, 0.597);
+  transition: 1s ease-in;
+}
+.chromeAnim {
+  transform: rotateX(40deg) translateY(470px);
+  box-shadow: 0 0 200px rgb(132, 0, 255);
 }
 .cursor {
   position: absolute;
