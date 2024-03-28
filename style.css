@@ -4,10 +4,19 @@
   padding: 0;
 }
 
+:root {
+  --bg-clr: black;
+}
+
+body {
+  background: var(--bg-clr);
+  scroll-behavior: smooth;
+  height: 300vh;
+}
+
 #app {
   width: 100%;
   height: 100dvh;
-  background-color: rgb(0, 0, 0);
   gap: 3rem;
   color: whitesmoke;
   position: relative;
@@ -81,7 +90,7 @@
   transition: 1s ease-in;
 }
 .chromeAnim {
-  transform: rotateX(40deg) translateY(470px);
+  transform: rotateX(40deg) translateY(600px);
   box-shadow: 0 0 200px rgb(132, 0, 255);
 }
 .cursor {
@@ -101,5 +110,29 @@
   }
   100% {
     scale: 1;
+  }
+}
+
+.blob {
+  width: 28rem;
+  aspect-ratio: 1;
+  position: fixed;
+  background: linear-gradient(to right, #c9ad1e, rgb(149, 101, 176));
+  border-radius: 100%;
+  filter: blur(120px);
+  translate: -50% -50%;
+  animation: blobify 15s ease-in infinite;
+}
+
+@keyframes blobify {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.2;
+  }
+  to {
+    rotate: 360deg;
   }
 }
