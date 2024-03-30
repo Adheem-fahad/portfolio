@@ -1,17 +1,23 @@
 import { css, el } from "../utilities/utilities";
 
-export default function mouseTrack() {
-  const blob_c = el("div", document.querySelector("body"), ["class", "blob"]);
+export default class S0 {
+  constructor() {
+    this.blob_c = el("div", document.querySelector("body"));
+    this.blob_c.classList.add("blob");
+    this.mouseTrack();
+  }
 
-  document.addEventListener("mousemove", (e) => {
-    const { clientX, clientY } = e;
+  mouseTrack() {
+    document.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
 
-    blob_c.animate(
-      {
-        left: `${e.clientX}px`,
-        top: `${e.clientY}px`,
-      },
-      { duration: 3000, fill: "forwards" }
-    );
-  });
+      this.blob_c.animate(
+        {
+          left: `${clientX}px`,
+          top: `${clientY}px`,
+        },
+        { duration: 3000, fill: "forwards" }
+      );
+    });
+  }
 }

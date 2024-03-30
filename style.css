@@ -27,11 +27,13 @@ body {
 }
 #app h1 {
   font-size: 0;
-  background: -webkit-radial-gradient(#710dc4, #9eb3f2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 6.5rem;
+  color: rgb(158, 72, 239);
   filter: blur(10px);
   transition: 3s ease-in-out;
+}
+#app h1:hover {
+  color: black;
 }
 .window {
   position: absolute;
@@ -116,6 +118,8 @@ body {
 .blob {
   width: 28rem;
   aspect-ratio: 1;
+  top: 20%;
+  left: 30%;
   position: fixed;
   background: linear-gradient(to right, #c9ad1e, rgb(149, 101, 176));
   border-radius: 100%;

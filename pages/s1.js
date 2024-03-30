@@ -8,7 +8,7 @@ import { el, css } from "../utilities/utilities";
 
 let information;
 export default class S1 {
-  constructor(root) {
+  constructor(root, szero) {
     fetch("./information.json")
       .then((response) => response.json())
       .then((json) => {
@@ -40,12 +40,13 @@ export default class S1 {
         this.windup(
           this.fileWindow.windowMain,
           this.vsWindow.windowMain,
-          this.chromeWindow.windowMain
+          this.chromeWindow.windowMain,
+          szero
         );
       }
     );
   }
-  async windup(x, y, z) {
+  async windup(x, y, z, s_zero) {
     // file
     await new Promise((resolve) => {
       setTimeout(() => {
@@ -71,7 +72,10 @@ export default class S1 {
     css(document.querySelector("#app h1"), {
       fontSize: "2rem",
       filter: "none",
+      transition: "1s ease-in-out",
     });
+
+    // s_zero.mouseTrack();
   }
   cleanUp() {
     this.root.innerHTML = null;
