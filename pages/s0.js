@@ -2,8 +2,7 @@ import { css, el } from "../utilities/utilities";
 
 export default class S0 {
   constructor() {
-    this.blob_c = el("div", document.querySelector("body"));
-    this.blob_c.classList.add("blob");
+    this.blob_c = document.querySelector(".blob");
     this.mouseTrack();
   }
 

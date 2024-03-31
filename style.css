@@ -8,10 +8,18 @@
   --bg-clr: black;
 }
 
+html {
+  height: 760vh;
+}
+
 body {
   background: var(--bg-clr);
   scroll-behavior: smooth;
-  height: 300vh;
+  transition: background 1s linear;
+}
+#s1 {
+  display: block;
+  height: 270vh;
 }
 
 #app {
@@ -24,15 +32,19 @@ body {
   font-family: "poppins";
   perspective: 500px;
   transform-style: preserve-3d;
+
+  /* construction */
+  position: sticky;
+  top: 0;
 }
-#app h1 {
+.sone {
   font-size: 0;
   padding: 6.5rem;
   color: rgb(158, 72, 239);
   filter: blur(10px);
   transition: 3s ease-in-out;
 }
-#app h1:hover {
+.sone:hover {
   color: black;
 }
 .window {
@@ -89,11 +101,16 @@ body {
 }
 .chrome {
   box-shadow: 0px 0 200px rgba(254, 254, 254, 0.597);
-  transition: 1s ease-in;
+  transition: 1s ease-in-out;
 }
 .chromeAnim {
   transform: rotateX(40deg) translateY(600px);
   box-shadow: 0 0 200px rgb(132, 0, 255);
+}
+.szeroh {
+  font-size: 2rem;
+  filter: none;
+  transition: 1s ease-in-out;
 }
 .cursor {
   position: absolute;
