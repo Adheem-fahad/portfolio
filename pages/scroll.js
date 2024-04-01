@@ -1,42 +1,48 @@
 import { clrHandler } from "../main";
-
+import { s2 } from "../main";
 export default class Scroll {
   constructor() {
-    this.s2();
+    this.s2fn();
   }
   s1(listener, root) {
-    const HEIGHT_OF_ROOT = root.parentElement.clientHeight;
+    this.HEIGHT_OF_ROOT = root.parentElement.clientHeight;
     document.addEventListener("scroll", (e) => {
       const { scrollY } = window;
 
       listener[0].classList.toggle(
         "fileEXanim",
-        scrollY >= (46 / 158) * HEIGHT_OF_ROOT
+        scrollY >= (46 / 158) * this.HEIGHT_OF_ROOT
       );
       listener[1].classList.toggle(
         "vsCodeanim",
-        scrollY >= (41 / 158) * HEIGHT_OF_ROOT
+        scrollY >= (41 / 158) * this.HEIGHT_OF_ROOT
       );
       listener[2].classList.toggle(
         "chromeAnim",
-        scrollY >= (43 / 158) * HEIGHT_OF_ROOT
+        scrollY >= (43 / 158) * this.HEIGHT_OF_ROOT
       );
       listener[3].classList.toggle(
         "szeroh",
-        scrollY >= (54 / 158) * HEIGHT_OF_ROOT
+        scrollY >= (50 / 158) * this.HEIGHT_OF_ROOT
       );
 
-      if (window.scrollY <= 1580 && clrHandler.state) {
-        console.log("kundi");
+      if (scrollY < (3.5 / 4) * this.HEIGHT_OF_ROOT && clrHandler.state) {
         clrHandler.blackMd();
       }
     });
   }
-  s2() {
+  s2fn() {
+    let counter = 0;
     document.addEventListener("scroll", (e) => {
-      if (window.scrollY >= 1580 && !clrHandler.state) {
-        console.log("kundi");
+      if (
+        window.scrollY >= (3 / 4) * this.HEIGHT_OF_ROOT &&
+        !clrHandler.state
+      ) {
         clrHandler.whiteMd();
+      }
+      if (window.scrollY > this.HEIGHT_OF_ROOT && counter == 0) {
+        s2.typingBox();
+        counter++;
       }
     });
   }

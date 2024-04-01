@@ -1,5 +1,5 @@
 import { el, css, prependChild } from "../utilities/utilities";
-import chromeSrc from "../assets/chromeop.png";
+import chromeSrc from "../assets/s1/chromeop.png";
 
 export default class WindowCreate {
   constructor(root, fn, visibility, aspectRat = 0) {
@@ -55,9 +55,9 @@ const getHAndW = async function (url) {
 export async function fileExplorerCnt(element) {
   element.classList.add("fileEx");
   element.innerHTML = `
-    <div style="background-image: url(&quot;/assets/filenavbar.png&quot;); width: 100%; aspect-ratio: 5.35577 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/s1/filenavbar.png&quot;); width: 100%; aspect-ratio: 5.35577 / 1;"></div>
     <div class="flex">
-    <div style="background-image: url(&quot;/assets/filetask.png&quot;); width: 25%; aspect-ratio: 0.503891 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/s1/filetask.png&quot;); width: 25%; aspect-ratio: 0.503891 / 1;"></div>
     <div style="width: 70%; height: 219px;">
     <div id="fileItem">📁 portfolio-webite</div>
     <div id="fileItem">📁 starter project</div>
@@ -70,28 +70,25 @@ export async function fileExplorerCnt(element) {
 
   return document.querySelector("#fileItem");
 }
-
 export async function vsCodeCnt(element) {
-  console.log("vs code");
   element.classList.add("vsCode");
   element.innerHTML = `
-    <div style="background-image: url(&quot;/assets/vsnav.png&quot;); width: 100%; aspect-ratio: 18.8793 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/s1/vsnav.png&quot;); width: 100%; aspect-ratio: 18.8793 / 1;"></div>
     <div class="flex">
-    <div style="background-image: url(&quot;/assets/vstask.png&quot;); width: 30%; aspect-ratio: 0.596273 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/s1/vstask.png&quot;); width: 30%; aspect-ratio: 0.596273 / 1;"></div>
     <div style="width: 70%; height: 0px;">
-    <div style="background-image: url(&quot;/assets/vsfilesnav.png&quot;); width: 100%; aspect-ratio: 11.6333 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/s1/vsfilesnav.png&quot;); width: 100%; aspect-ratio: 11.6333 / 1;"></div>
     <div style="width: 100%; height: 0px;"></div>
     </div>
     </div>
     <div class="flex" style="justify-content: space-between;">
-    <div style="background-image: url(&quot;/assets/vssettings.png&quot;); width: 80%; aspect-ratio: 27.1471 / 1;"></div>
-    <div style="background-image: url(&quot;/assets/vsLive.png&quot;); width: 10%; aspect-ratio: 3.62931 / 1;" id="live-server"></div>
+    <div style="background-image: url(&quot;/assets/s1/vssettings.png&quot;); width: 80%; aspect-ratio: 27.1471 / 1;"></div>
+    <div style="background-image: url(&quot;/assets/s1/vsLive.png&quot;); width: 10%; aspect-ratio: 3.62931 / 1;" id="live-server"></div>
     </div>
     `;
 }
 
 export async function chromeCnt(element) {
-  console.log("chrome");
   element.classList.add("chrome");
   element.style.backgroundImage = `url(${chromeSrc})`;
   css(element, {

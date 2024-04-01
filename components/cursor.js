@@ -1,6 +1,6 @@
 import { el, css, prependChild } from "../utilities/utilities";
 
-async function delay(time) {
+export async function delay(time) {
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve();
@@ -39,7 +39,6 @@ export default class Cursor {
     target1.classList.add("hover-file-item");
 
     await this.sameFn(target1);
-    console.log("cursor movin");
 
     await delay(700);
     this.cursorEl.style.transition = `1s ease-in-out`;
@@ -55,6 +54,8 @@ export default class Cursor {
 
     await this.sameFn(target2);
 
+    await delay(800);
+    this.cursorEl.style.display = "none";
     fnrun();
     // fnrun(argsArr, root);
   }

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,824;1,824&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@
 
 :root {
   --bg-clr: black;
+  --nav-clr: rgb(186, 95, 219);
 }
 
 html {
@@ -13,16 +15,20 @@ html {
 }
 
 body {
-  background: var(--bg-clr);
+  background-color: var(--bg-clr);
+  /* background-color: rgb(237, 222, 192); */
   scroll-behavior: smooth;
-  transition: background 1s linear;
+  transition: 0.5s background-color linear;
 }
+
+/* S1 styling sheet all styles of s1.js */
 #s1 {
   display: block;
   height: 270vh;
+  border-bottom: 2px solid red;
 }
 
-#app {
+#s1 > div {
   width: 100%;
   height: 100dvh;
   gap: 3rem;
@@ -32,8 +38,6 @@ body {
   font-family: "poppins";
   perspective: 500px;
   transform-style: preserve-3d;
-
-  /* construction */
   position: sticky;
   top: 0;
 }
@@ -42,6 +46,7 @@ body {
   padding: 6.5rem;
   color: rgb(158, 72, 239);
   filter: blur(10px);
+  text-align: center;
   transition: 3s ease-in-out;
 }
 .sone:hover {
@@ -66,7 +71,6 @@ body {
   width: 90%;
   margin: 0px 0px 0px 10px;
   padding: 3.5px 0px 3.5px 5px;
-  /* background-color: red; */
   border: 1px solid transparent;
 }
 .hover-file-item,
@@ -75,7 +79,6 @@ body {
   background-color: rgba(221, 221, 221, 0.279);
   cursor: pointer;
 }
-/* // fileEx, vsCode, chrome */
 
 .fileEx {
   top: 20%;
@@ -132,6 +135,7 @@ body {
   }
 }
 
+/* S0 styling of blob */
 .blob {
   width: 28rem;
   aspect-ratio: 1;
@@ -143,6 +147,11 @@ body {
   filter: blur(120px);
   translate: -50% -50%;
   animation: blobify 15s ease-in infinite;
+  z-index: -5;
+}
+
+.ku {
+  color: rgb(237, 222, 192);
 }
 
 @keyframes blobify {
@@ -156,4 +165,83 @@ body {
   to {
     rotate: 360deg;
   }
+}
+
+/* s2 style sheet be careful while the styles are here this is opening of experience list */
+#s2 {
+  width: 100%;
+  height: 100dvh;
+  border-bottom: 2px solid red;
+  position: relative;
+  overflow: hidden;
+}
+.mango1 {
+  height: 80vh;
+  aspect-ratio: 1;
+  background-image: url("./assets/sCOMPARE/mango.png");
+  background-size: cover;
+}
+.mangoINFO {
+  position: absolute;
+  font-size: 20px;
+  width: 16rem;
+  aspect-ratio: 1.6;
+  box-shadow: -40px 0 100px rgb(82, 4, 4);
+  border-radius: 5px;
+  backdrop-filter: blur(40px);
+  font-family: "consolas";
+  display: flex;
+  overflow: hidden;
+}
+.mangoINFO span {
+  padding-top: 5px;
+  width: 10%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.162);
+  text-align: right;
+  color: rgba(255, 255, 255, 0.345);
+  padding-right: 6px;
+}
+.mangoINFO div {
+  padding-top: 5px;
+  padding-left: 8px;
+  width: 87%;
+  height: 100%;
+}
+.mangoINFO li {
+  list-style-type: none;
+}
+.s2text {
+  border: 2px solid green;
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.468);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  line-height: 130px;
+  overflow: hidden;
+  width: 100%;
+  height: 100dvh;
+  font-family: "playfair display";
+}
+
+/* snav styling */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 3.5rem;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  background-color: var(--nav-clr);
+}
+.nav span {
+  width: 20px;
+  height: 2px;
+  background-color: white;
 }

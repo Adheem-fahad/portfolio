@@ -5,7 +5,7 @@ export default class Clr {
     this.state = 0;
   }
   whiteMd() {
-    ROOT.style.setProperty("--bg-clr", "white");
+    ROOT.style.setProperty("--bg-clr", "rgb(237, 222, 192)");
     this.state = 1;
   }
 
