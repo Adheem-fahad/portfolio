@@ -13,4 +13,8 @@ export default class Clr {
     ROOT.style.setProperty("--bg-clr", "black");
     this.state = 0;
   }
+  toggle() {
+    if (this.state) this.blackMd();
+    else this.whiteMd();
+  }
 }

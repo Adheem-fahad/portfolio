@@ -3,7 +3,9 @@ import { el, css } from "../utilities/utilities";
 
 export default class S2 {
   constructor() {
-    this.root = document.querySelector("#s2");
+    this.father = document.querySelector("#s2");
+    this.root = el("div", this.father);
+    this.root.classList.add("full-center");
     this.createFirstMango(this.root);
   }
   createFirstMango(root) {
