@@ -5,7 +5,7 @@ import WindowCreate, {
 } from "../components/s1cmpts";
 import Cursor from "../components/cursor";
 import { el, css } from "../utilities/utilities";
-// import { scrollHandler } from "../main";
+import { scrollHandler } from "../main";
 
 async function delay(time) {
   await new Promise((resolve) => {
@@ -58,15 +58,15 @@ export default class S1 {
       [document.querySelector("#fileItem"), document.querySelector(".fileEx")],
       [document.querySelector("#live-server"), this.vsWindow.windowMain],
       () => {
-        // scrollHandler.s1(
-        //   [
-        //     this.fileWindow.windowMain,
-        //     this.vsWindow.windowMain,
-        //     this.chromeWindow.windowMain,
-        //     this.heading,
-        //   ],
-        //   this.root
-        // );
+        scrollHandler.s1(
+          [
+            this.fileWindow.windowMain,
+            this.vsWindow.windowMain,
+            this.chromeWindow.windowMain,
+            this.heading,
+          ],
+          this.root
+        );
       }
     );
   }

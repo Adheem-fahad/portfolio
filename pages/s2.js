@@ -24,13 +24,13 @@ export default class S2 {
       top: `${mango1.offsetTop + mango1.clientHeight / 2}px`,
     });
   }
-  typingBox() {
+  typingBox(fn) {
     console.log("called");
-    typing(this.mangoINFOED[1], this.mangoINFOED[0], [
-      `{`,
-      `color: "red",`,
-      `amount: 1`,
-      `}`,
-    ]);
+    typing(
+      this.mangoINFOED[1],
+      this.mangoINFOED[0],
+      [`{`, `color: "red",`, `amount: 1`, `}`],
+      fn
+    );
   }
 }

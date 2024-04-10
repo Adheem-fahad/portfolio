@@ -24,3 +24,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.slideStatic {
+  margin-left: 300vw;
+  filter: blur(2px);
+  scale: 2;
+}
+.wipeStatic {
+  scale: 2;
+  filter: blur(10px);
+  margin-right: 200vw;
+  margin-top: 94vh;
+}
+.wipeFlow {
+  scale: 3;
+  filter: blur(10px);
+  translate: 100vw 94vh;
+}

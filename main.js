@@ -6,9 +6,9 @@ import S0 from "./pages/s0.js";
 import S1 from "./pages/s1.js";
 import Color from "./utilities/colorSet.js";
 import S2 from "./pages/s2.js";
-import scroll from "./pages/scroll.js";
+import Scroll from "./pages/scroll.js";
 
-scroll();
+export let scrollHandler = new Scroll();
 export let clrHandler = new Color();
 
 let s0 = new S0();
